@@ -1,0 +1,23 @@
+import requests
+from bs4 import BeautifulSoup
+
+# URL de la página que quieres hacer scraping
+url = 'http://ufcstats.com/statistics/fighters?char=a&page=all'
+
+# Realizamos la solicitud GET a la página
+response = requests.get(url)
+
+# Verificamos que la solicitud fue exitosa
+if response.status_code == 200:
+    # Creamos un objeto BeautifulSoup con el contenido de la página
+    soup = BeautifulSoup(response.text, 'html.parser')
+    
+    # Aquí puedes empezar a buscar elementos en la página usando los métodos de BeautifulSoup
+    # Por ejemplo, para encontrar todos los enlaces (<a>) en la página:
+    links = soup.find_all('a')
+    
+    # Iteramos sobre los enlaces encontrados e imprimimos sus URLs
+    for link in links:
+        print(link.get('href'))
+else:
+    print("Error al acceder a la página:", response.status_code)
