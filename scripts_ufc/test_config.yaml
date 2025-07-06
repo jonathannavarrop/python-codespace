@@ -1,0 +1,17 @@
+# urls to parse
+url: http://ufcstats.com/fighter-details/54f64b5e283b0ce7
+
+# file names for parsed data
+test_file_name: testfile.csv
+
+# column names for fighter testfile:
+fighter_stats_column_names:
+  - FIGTHER 
+  - SLpM
+  - Str. Acc.
+  - SApM
+  - Str. Def
+  - TD Avg
+  - TD Acc
+  - TD Def.
+  - Sub. Avg.
